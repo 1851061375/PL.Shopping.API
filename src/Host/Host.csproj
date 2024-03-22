@@ -1,0 +1,95 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <RootNamespace>TD.WebApi.Host</RootNamespace>
+        <AssemblyName>TD.WebApi.Host</AssemblyName>
+    </PropertyGroup>
+    <PropertyGroup>
+        <ContainerImageName>dotnet-webapi</ContainerImageName>
+        <ContainerImageTags>1.0.0;latest</ContainerImageTags>
+        <PublishProfile>DefaultContainer</PublishProfile>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+        <PackageReference Include="Hangfire.Console.Extensions.Serilog" Version="1.2.0" />
+        <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="8.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.0" />
+        <PackageReference Include="Serilog.AspNetCore" Version="8.0.0" />
+        <PackageReference Include="Microsoft.NET.Build.Containers" Version="8.0.100" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Core\Application\Application.csproj" />
+        <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+        <ProjectReference Include="..\Migrators\Migrators.PostgreSQL\Migrators.PostgreSQL.csproj" />
+        <ProjectReference Include="..\Migrators\Migrators.MSSQL\Migrators.MSSQL.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Update="Configurations\*.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <None Include="Email Templates\*.html">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Remove="Databases\**" />
+        <Compile Remove="wwwroot\**" />
+        <Content Remove="Databases\**" />
+        <Content Remove="Logs\*" />
+        <Content Remove="wwwroot\**" />
+        <None Include="Logs\*" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="Email Templates\*.cshtml">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Remove="Databases\**" />
+      <EmbeddedResource Remove="wwwroot\**" />
+      <None Remove="Databases\**" />
+      <None Remove="wwwroot\**" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Remove="Email Templates\AddUserCourse.cshtml" />
+      <Content Remove="Email Templates\AddUserCourseSuccess.cshtml" />
+      <Content Remove="Email Templates\email-dangkikhoahoc.cshtml" />
+      <Content Remove="Email Templates\email-dangkithanhcong.cshtml" />
+      <Content Remove="Email Templates\FinishExam.cshtml" />
+      <Content Remove="Email Templates\ForgotPassword.cshtml" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Update="ClientApp\TextFile.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Files\TextFile.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="ReportTemplates\BieuMau.docx">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="ReportTemplates\BieuMau.xlsx">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="ReportTemplates\ReportCourseByUser.docx">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="ReportTemplates\ReportCourse.docx">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Update="Roslynator.Analyzers" Version="4.7.0">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Controllers\Dashboard\" />
+      <Folder Include="Logs\" />
+    </ItemGroup>
+</Project>

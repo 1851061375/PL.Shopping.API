@@ -1,0 +1,6 @@
+{
+  "DatabaseSettings": {
+    "DBProvider": "mssql",
+    "ConnectionString": "Data Source=NAUXUI;Initial Catalog=PL_Shoping;User Id=lappv;Password=09122000;Trusted_Connection=SSPI;Encrypt=false;TrustServerCertificate=true"
+  }
+}

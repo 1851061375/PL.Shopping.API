@@ -1,0 +1,26 @@
+[
+  {
+    "Key": "Portal_Email",
+    "Value": "demo.vn@gmail.com",
+    "Description": "Email liên hệ",
+    "IsActivePortal": true
+  },
+  {
+    "Key": "Portal_Company",
+    "Value": "Công ty demo",
+    "Description": "Tên công ty",
+    "IsActivePortal": true
+  },
+  {
+    "Key": "Portal_Address",
+    "Value": "Số nhà XYZ",
+    "Description": "Địa chỉ",
+    "IsActivePortal": true
+  },
+  {
+    "Key": "Portal_Hotline",
+    "Value": "0123456789",
+    "Description": "Hotline",
+    "IsActivePortal": true
+  }
+]

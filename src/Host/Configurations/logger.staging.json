@@ -1,0 +1,7 @@
+{
+  "LoggerSettings": {
+    "AppName": "TD.WebApi",
+    "WriteToFile": false,
+    "StructuredConsoleLogging": true
+  }
+}

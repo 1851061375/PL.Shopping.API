@@ -1,0 +1,10 @@
+{
+  "MailSettings": {
+    "DisplayName": "CodeMath - Toán Olympic Quốc tế và toán nâng cao tiểu học",
+    "From": "codemath.vn@gmail.com",
+    "Host": "smtp.gmail.com",
+    "Password": "zvzebvcdwmwrlrat",
+    "Port": 587,
+    "UserName": "codemath.vn@gmail.com"
+  }
+}
